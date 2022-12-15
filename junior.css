@@ -1,0 +1,59 @@
+.buttonUpdate{
+    border: none;
+    background-color: #5085d4;
+}
+.buttonDelete{
+    border: none;
+    background-color: #5085d4;
+}
+.buttonAdd{
+    border: none;
+    background-color: #5085d4;
+}
+.card-header{
+    background-color: #5085d4;
+}
+#bin:hover{
+    width:20px;
+    height: 20px;
+}
+#update:hover{
+    width:20px;
+    height: 20px;
+}
+.footer{
+    display: flex;
+    justify-content: space-around;
+    background-color: #5085d4;
+}
+#petitCard{
+    margin-top: 10px;
+    margin-right: 5px;
+}
+#card{
+    margin-top: 20px;
+    background-color: #5085d4;
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+}
+#textarea{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.cardChange{
+    position: absolute;
+    top: 32%;
+    right: 35%;
+    
+}
+#plusButton:hover{
+    width:40px;
+    height: 40px;
+}
+#addedCard{
+    display: flex;
+    flex-wrap: wrap;
+}

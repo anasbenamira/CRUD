@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+ 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="junior.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Croud js</title>
+</head>
+<body>
+    <div class="container" >
+        <div class="card" id="card">
+            <h5 class="card-header">Add a New Task</h5>
+            <div class="card-body">
+              <input type="text" placeholder="donner un titre" id="Titre">
+              <textarea name="description" id="textarea" cols="20" rows="10" placeholder="donner un description"></textarea>
+              <button class="buttonAdd" id="addButton">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16" id="plusButton">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                  </svg>
+              </button>
+            </div>
+          </div>
+    </div>
+      <div class="container" id="addedCard">
+        
+      </div>
+      <div class="cardChange">
+
+      </div>
+      <template id="template"> 
+        <div class="deletecard">
+          <div class="card border-dark mb-3" style="max-width: 18rem;"id="petitCard">
+            <div class="card-header" style="background-color: #5085d4;"></div>
+            <div class="card-body text-dark">  
+              <p class="card-text" ></p>
+            </div>
+            <div class="footer">
+              <button class="buttonUpdate" >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-text-fill" viewBox="0 0 16 16" id="update">
+                <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM4.5 9a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM4 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 1 0-1h4a.5.5 0 0 1 0 1h-4z"/>
+                </svg>
+              </button>
+              <button class="buttonDelete" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16" id="bin">
+                  <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/> 
+                 </svg>  
+                </button>   
+              </div>
+            </div>
+        </div>     
+    </template>
+    <template id="templateModifier">
+      <div class="card text-center" style="width: 18rem;background-color: #5085d4;" id="cardOfChanger" >
+        <div class="card-body">
+            <input type="text" placeholder="donner un titre" class="inputChange">
+            <textarea name="description" class="textarea2" cols="20" rows="5" placeholder="donner un description"></textarea>
+            <button type="button" class="btn btn-primary" id="buttonOfUpdateCard">submit changes</button>
+        </div>
+      </div>
+    </template>
+      <script src="junior.js"></script>
+</body>
+      </html>
