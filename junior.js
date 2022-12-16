@@ -10,7 +10,7 @@ const templateModifier=document.getElementById('templateModifier')
 const div=document.querySelector('.cardChange')
 //compteur pour donner a chaque elemnt un id different
 let s=0
-
+let r=0
 const hideUpdateCard=(cardOfUpdate,titleSelected,textareaSelected)=>{
     // acceder au input et textarea qui contient les modifications qui sont les fils du cardOfUpdate
     const inputChange=cardOfUpdate.childNodes[1].childNodes[1]
@@ -20,20 +20,35 @@ const hideUpdateCard=(cardOfUpdate,titleSelected,textareaSelected)=>{
     textareaSelected.textContent=` ${textAreaOfUpdate.value} `
     //supprimer la card de la modification
     cardOfUpdate.remove()
+    // retourner le compteur a zero pour que remove ne fait pas un erreur
+    r=0
 }
 
 
 const afficherUpdateCard=(titleSelected,textareaSelected)=>{
-    // on va cloner la temlate 
+    /* tout ca est fait pour effacer la redondance du carte de update car si j'appuis pour faire la mise a jour d'un element
+    et je suis entraint de faire la mise a jour d'un autre element il va etre afficher donc ceci va effacer la card du mise
+    a jour en utilisant un id */
+    
+    if(r>0){
+    const cardOfChangerRemove=document.getElementById(`cardOfChanger${r}`)
+    cardOfChangerRemove.remove()
+    }
+    
+    r=r+1
+    // on va faire une copie du modele qui se trouve dans la balise template
     const clone=document.importNode(templateModifier.content,true)
     // on va selectionner les balise html
     const buttonOfUpdateCard=clone.querySelector('#buttonOfUpdateCard')
     const cardOfUpdate=clone.querySelector('#cardOfChanger')
     const textAreaOfUpdate=clone.querySelector('.textarea2')
     const inputChange=clone.querySelector('.inputChange')
+    const cardOfChanger=clone.querySelector('#cardOfChanger')
     // on va donner la valeur de l'input et le textarea , les valeur sont ce des card selectionner 
     inputChange.value=titleSelected.textContent
     textAreaOfUpdate.value=textareaSelected.textContent
+    // donner au card un id pour pouvoir effacer la card aprés
+    cardOfChanger.setAttribute('id',`cardOfChanger${r}`)
     // ajouter un evennement au button on a fait passer la balise du titre ou on va placer le titre modifier
     // et de memes pour le text area pour la card quand va la supprimée
     buttonOfUpdateCard.addEventListener('click',() => hideUpdateCard(cardOfUpdate,titleSelected,textareaSelected))
